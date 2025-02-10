@@ -1,10 +1,14 @@
 <template>
   <div class="table">
-    <div class="pot">145 500</div>
-    <div class="community-cards">
-      <Flop :flopCards="flop" />
-      <Turn :turnCard="turn" />
-      <River :riverCard="river" />
+    <div class="community">
+      <div class="pot">
+        <h1>145 500$</h1>
+      </div>
+      <div class="community-cards">
+        <Flop :flopCards="flop" />
+        <Turn :turnCard="turn" />
+        <River :riverCard="river" />
+      </div>
     </div>
   </div>
 </template>
@@ -94,29 +98,41 @@ export default {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-.pot {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #0f5132;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-weight: bold;
-  font-size: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.community-cards {
+.community {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  gap: 10px;
+}
+
+.pot {
+  background-color: rgba(15, 81, 50, 0.5);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h1 {
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+
+.community-cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  border: 5px solid rgba(15, 81, 50, 0.7);
 }
 </style>

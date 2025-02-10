@@ -17,7 +17,7 @@ export default {
 .card {
   position: relative;
   width: 40px;
-  height: 80px;
+  height: 70px;
   background-color: white;
   border-radius: 10px;
   border: 2px solid black;
